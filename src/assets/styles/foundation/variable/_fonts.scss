@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap');
+
+@mixin font-family {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+$fontSize-init: 62.5%;
+$fontSize-xxs:  1.1rem;
+$fontSize-xs:   1.2rem;
+$fontSize-ss:   1.3rem;
+$fontSize-s:    1.4rem;
+$fontSize-m:    1.6rem;
+$fontSize-l:    1.8rem;
+$fontSize-ll:   2.0rem;
+$fontSize-xl:   2.2rem;
+$fontSize-xxl:  2.4rem;

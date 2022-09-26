@@ -1,0 +1,20 @@
+$breakPoint-sp: 768px;
+$breakPoint-pc: 1024px;
+
+@mixin media-sp {
+  @media (max-width: $breakPoint-sp - 1) {
+    @content;
+  }
+}
+
+@mixin media-tb {
+  @media (min-width: $breakPoint-sp) and (max-width: $breakPoint-pc - 1) {
+    @content;
+  }
+}
+
+@mixin media-pc {
+  @media (min-width: $breakPoint-pc) {
+    @content;
+  }
+}

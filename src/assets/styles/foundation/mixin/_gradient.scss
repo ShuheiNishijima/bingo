@@ -1,0 +1,3 @@
+@mixin gradient-top-left ($startColor, $endColor) {
+  background: linear-gradient(135deg, $startColor, $endColor);
+}

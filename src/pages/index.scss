@@ -1,0 +1,30 @@
+@import '@/assets/styles/foundation/variable/colors';
+@import '@/assets/styles/foundation/variable/fonts';
+@import '@/assets/styles/foundation/mixin/gradient';
+
+.index-bingo__title {
+  font-size: $fontSize-xxl;
+  font-weight: bold;
+  text-align: center;
+}
+
+.index-bingo__panel {
+  height: 80px;
+  font-size: 8.0rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.index-numberset__flex {
+  display: flex;
+}
+
+.index-numberset__item {
+  width: 50%;
+  &:first-child {
+    padding-right: 5px;
+  }
+  &:last-child {
+    padding-left: 5px;
+  }
+}

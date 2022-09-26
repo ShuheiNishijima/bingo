@@ -1,0 +1,19 @@
+plugins:
+  - 'stylelint-scss'
+extends:
+  - 'stylelint-config-standard'
+  - 'stylelint-config-prettier'
+customSyntax: 'postcss-scss'
+rules:
+  max-empty-lines: 2
+  declaration-colon-space-after: 'always'
+  declaration-empty-line-before: 'never'
+  block-opening-brace-space-before: 'always'
+  block-closing-brace-newline-after: 'always'
+  selector-pseudo-element-colon-notation: 'double'
+  declaration-block-trailing-semicolon: 'always'
+  declaration-block-no-redundant-longhand-properties: null
+  no-eol-whitespace: true
+  indentation: 2
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true

@@ -1,0 +1,28 @@
+@import '@/assets/styles/foundation/variable/colors';
+@import '@/assets/styles/foundation/variable/fonts';
+@import '@/assets/styles/foundation/mixin/gradient';
+
+.header {
+  @include gradient-top-left($headerBaseColor-light, $headerBaseColor-dark);
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+.header__logo {
+  position: absolute;
+  width: 140px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  >a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    color: #fff;
+    font-size: $fontSize-s;
+    text-align: center;
+    text-decoration: none;
+  }
+}

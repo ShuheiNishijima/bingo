@@ -1,0 +1,29 @@
+@import '@/assets/styles/foundation/mixin/gradient';
+@import '@/assets/styles/foundation/variable/colors';
+@import '@/assets/styles/foundation/variable/fonts';
+
+.number-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.number-list__item {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  color: $baseColor-dark;
+  font-size: $fontSize-ll;
+  text-align: center;
+  border: 1px solid $baseColor-dark;
+  border-radius: 8px;
+  &.is-selected {
+    @include gradient-top-left($buttonColor-light, $buttonColor-dark);
+    color: #fff;
+    border: 1px solid #fff;
+  }
+}

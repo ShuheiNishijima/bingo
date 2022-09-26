@@ -1,0 +1,6 @@
+@for $ph from 1 through 4 {
+  .u-ph-#{$ph * 5}px {
+    padding-right: #{$ph * 5}px;
+    padding-left: #{$ph * 5}px;
+  }
+}
