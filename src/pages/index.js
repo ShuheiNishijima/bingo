@@ -16,11 +16,12 @@ export default {
     return {
       done: false,
       isPlay: false,
+      isSpin: false,
       items: [],
       hitItems: [],
       inputNumber: null,
+      spinNumber: null,
       matchNumber: null,
-      matchIndex: 0,
       slotButton: true,
       selectTimer: false,
       checkState: true,
@@ -43,28 +44,15 @@ export default {
       }
     },
     /**
-     * ビンゴをリセットするメソッド
-     * @return {void}
-     */
-    reset() {
-      this.done = false
-      this.isPlay = false
-      this.items = []
-      this.hitItems = []
-      this.inputNumber = null
-      this.matchNumber = null
-      this.matchIndex = 0
-      this.slotButton = true
-      this.selectTimer = false
-    },
-    /**
      * ランダムに番号を算出（被ってないかもチェック）するメソッド
      * @return {void}
      */
+    randomSpin() {
+      this.spinNumber = Math.floor(Math.random() * this.items.length) + 1
+    },
     randomChoice() {
       this.matchNumber = Math.floor(Math.random() * this.items.length) + 1
-      this.matchIndex = this.items.indexOf(this.matchNumber)
-      if (this.hitItems.includes(this.matchIndex)) this.randomChoice()
+      if (this.hitItems.includes(this.matchNumber)) this.randomChoice()
     },
     /**
      * 抽選を開始するメソッド
@@ -76,18 +64,39 @@ export default {
         this.done = true
         return
       }
+      this.isSpin = true
       this.slotButton = false
+      this.randomSpin()
       this.randomChoice()
-      this.selectTimer = setTimeout(this.spinSlot, 100)
+      this.selectTimer = setTimeout(() => {
+        this.spinSlot()
+      }, 80)
     },
     /**
      * 抽選を確定するメソッド
      * @return {void}
      */
-    stopSlot() {
+    stop() {
+      this.isSpin = false
       this.slotButton = true
       clearTimeout(this.selectTimer)
-      this.hitItems.push(this.matchIndex)
+      this.hitItems.push(this.matchNumber)
     },
+    /**
+     * ビンゴをリセットするメソッド
+     * @return {void}
+     */
+    reset() {
+      this.done = false
+      this.isPlay = false
+      this.isSpin = false
+      this.items = []
+      this.hitItems = []
+      this.inputNumber = null
+      this.matchNumber = null
+      this.slotButton = true
+      this.selectTimer = false
+    },
+
   },
 }

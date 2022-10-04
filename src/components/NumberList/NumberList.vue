@@ -3,7 +3,7 @@
     <li
       v-for="(item, index) in items"
       :key="`number-list-${index}`"
-      :class="{ 'is-selected': isSelected(index) }"
+      :class="{ 'is-selected': isSelected(item) }"
       class="number-list__item"
     >
       {{ item }}

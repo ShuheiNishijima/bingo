@@ -13,11 +13,11 @@ export default {
   computed: {
     /**
      * 当選済にクラスを付与する参照プロパティ
-     * @param {number}
+     * @param {number} value
      * @return {boolean}
      */
     isSelected() {
-      return (index) => this.selectedItems.includes(index)
+      return (value) => this.selectedItems.includes(value)
     },
   },
 };
